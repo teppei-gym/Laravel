@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\User\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::namespace('User')->group(function () {
+    Route::get('/', 'LoginController@index')->name('login');
+    Route::resource('user', 'RegisterController');
 });
