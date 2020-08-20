@@ -1,6 +1,6 @@
 {
-    "/css/user/base/_shar/login_form.css": "/css/user/base/_shar/login_form.css",
-    "/css/user/base/layouts/base.css": "/css/user/base/layouts/base.css",
-    "/css/user/login/index.css": "/css/user/login/index.css",
-    "/css/user/register/index.css": "/css/user/register/index.css"
+    "/css/base/_shar/login_form.css": "/css/base/_shar/login_form.css",
+    "/css/base/layouts/base.css": "/css/base/layouts/base.css",
+    "/css/login/index.css": "/css/login/index.css",
+    "/css/register/index.css": "/css/register/index.css"
 }

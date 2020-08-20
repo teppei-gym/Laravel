@@ -16,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('User')->group(function () {
     Route::get('/', 'LoginController@index')->name('login');
-    Route::resource('user', 'RegisterController');
+    Route::name('user.')->group(function () {
+        Route::prefix('user')->group(function () {
+            Route::get('create', 'RegisterController@create')->name('create');
+        });
+    });
 });
