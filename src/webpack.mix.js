@@ -1,4 +1,5 @@
-const mix = require('laravel-mix');
+const mix = require("laravel-mix");
+const glob = require("glob");
 
 /*
  |--------------------------------------------------------------------------
@@ -11,5 +12,13 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+const ignoreFile = "";
+
+//css のコンパイル
+glob.sync("resources/sass/**/*.scss", {
+    ignore: ignoreFile
+}).map(function(file) {
+    let output = file.replace(/resources\/sass/, "public/css");
+
+    mix.sass(file, output.replace(/\.scss/, ".css"));
+});
