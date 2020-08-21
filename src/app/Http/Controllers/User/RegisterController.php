@@ -10,13 +10,20 @@ use App\Models\User;
 class RegisterController extends Controller
 {
     /**
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('register.index');
+    }
+    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('register.index');
+        return view('register.create');
     }
     /**
      * @param App\Http\Requests\RegisterStoreRequest
@@ -32,6 +39,6 @@ class RegisterController extends Controller
 
         session(['user' => $user]);
 
-        return redirect()->route('home');
+        return redirect()->route('index');
     }
 }

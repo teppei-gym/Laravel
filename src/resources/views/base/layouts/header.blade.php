@@ -7,7 +7,7 @@
             <li><button class="button">Logout</button></li>
             @else
             <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('user.create') }}">Register</a></li>
+            <li><a href="{{ route('create') }}">Register</a></li>
             @endif
         </ul>
     </div>
