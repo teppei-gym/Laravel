@@ -15,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('User')->group(function () {
-    Route::get('/', 'LoginController@index')->name('login');
-    Route::name('user.')->group(function () {
-        Route::prefix('user')->group(function () {
-            Route::get('create', 'RegisterController@create')->name('create');
-        });
-    });
+    Route::get('login', 'LoginController@index')->name('login');
+    Route::middleware('customAuth')->group((function () {
+        Route::get('/', 'RegisterController@index')->name('index');
+    }));
+    Route::get('create', 'RegisterController@create')->name('create');
+    Route::post('/', 'RegisterController@store')->name('store');
 });
